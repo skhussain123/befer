@@ -1,0 +1,27 @@
+(function () {
+  'use strict';
+
+  // AZ Animals
+
+  const adthriveTargetingValues = window.adthriveTargetingValues || [];
+
+  const contentCategory = window.location.pathname
+    .split('/')
+    .filter((path) => path);
+
+  if (contentCategory.length) {
+    adthriveTargetingValues.push(`azanimals_${contentCategory[0]}`);
+  } else {
+    adthriveTargetingValues.push(`azanimals_home`);
+  }
+
+  if (adthriveTargetingValues.length) {
+    window.adthrive.cmd.push(() => {
+      window.adthrive.siteAds.targeting.push({
+        key: 'at_custom_1',
+        value: adthriveTargetingValues,
+      });
+    });
+  }
+
+}());

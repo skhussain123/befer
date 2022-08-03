@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <title></title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+
+<style>
+
+
+.imgcon{
+  position: relative;
+  bottom: 2000px;
+}
+
+.container {
+  position: relative;
+  display: inline-block;
+  float: none;
+  margin: 1.5%;
+  width: 97%;
+  max-width: 1400px;
+}
+.tile {
+  z-index: 0;
+  position: relative;
+  display: inline-block;
+  float: none;
+  margin: 1.5%;
+  padding: 0;
+  max-width: 46.5%;
+  height: 270px;
+  width: 100%;
+  text-align: center;
+  background: #eee;
+  overflow: hidden;
+  transition: -webkit-transform 0.2s cubic-bezier(0.625,0.125,0.305,0.875);
+  transition: transform 0.2s cubic-bezier(0.625,0.125,0.305,0.875);
+  transition: transform 0.2s cubic-bezier(0.625,0.125,0.305,0.875),-webkit-transform 0.2s cubic-bezier(0.625,0.125,0.305,0.875);
+}
+.tile:hover, .tile:focus {
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+.tile-quad {
+  max-width: 30.3333%;
+  height: 250px;
+}
+.tile figure {
+  z-index: 0;
+  margin: 0;
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  transition: all 1.5s cubic-bezier(.190, 1.000, .220, 1.000);
+  -webkit-transition: all 1.5s cubic-bezier(.190, 1.000, .220, 1.000);
+  -moz-transition: all 1.5s cubic-bezier(.190, 1.000, .220, 1.000);
+  -ms-transition: all 1.5s cubic-bezier(.190, 1.000, .220, 1.000);
+  -o-transition: all 1.5s cubic-bezier(.190, 1.000, .220, 1.000);
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: gray; /* IE 6-9 */
+}
+.tile:hover figure, .tile:focus figure { 
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+.tile a {
+  display: table;
+  position: relative;
+  float: left;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  /*  background: rgba(0,0,0,.5); */
+  transition: all .25s;
+}
+/* .tile a:hover, .tile a:focus {
+  background: rgba(0, 0, 0, 0.6);
+} */
+/*.tile a:hover p, .tile a:focus p {
+  color: #fff;
+  transition: all .25s;
+}*/
+.tile a div {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 2rem;
+}
+.tile h3 {
+  margin: 0 auto;
+  font-size: 2rem;
+  color: #fff;
+  padding: 0 0 1rem;
+  line-height: 1;
+}
+.tile p {
+  margin: 0 auto;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.2;
+  width: auto;
+  transition: opacity 0s, max-height 0s;
+}
+
+.tile a:hover p, .tile a:focus p {
+  color: #fff;
+  transition: all .5s;
+}
+
+/*.tile a:hover p, 
+.tile a:focus p {
+  opacity: 1; 
+  max-height: 999px; 
+  transition: opacity 1s, max-height 1s;
+}*/
+
+/*.tile h3:after {
+  content: '';
+  position: absolute;
+  left: 2.8rem;
+  margin: 64px auto;
+  width: 0px;
+  height: 2px;
+  background: #fff;
+  -webkit-transition: width 0.6s;
+  transition: width 0.6s;
+  opacity: 0;
+}
+.tile a:hover h3:after, .tile a:focus h3:after {
+  width: 64px;
+  opacity: 1;
+}*/
+
+.color-red {
+  background: rgba(255, 60, 78, 0.76);
+}
+.color-yellow {
+  background: rgba(255, 185, 29, 0.76);
+}
+.color-green {
+  background: rgba(35, 226, 94, 0.76);
+}
+.color-blue {
+  background: rgba(49, 122, 255, 0.76);
+}
+.color-purple {
+   background: rgba(225, 60, 255, 0.76);
+}
+.color-aqua {
+   background: rgba(48, 228, 212, 0.76);
+}
+
+@media screen and (max-width: 700px) {
+  .tile,
+  .tile:nth-child(2),
+  .tile:nth-child(8),
+  .tile:nth-child(4),
+  .tile:nth-child(8) {
+    max-width: 97%;
+  }}
+
+  
+</style>
+
+
+<body class="cc" >
+
+  <div class="container-fluid top_line">
+
+
+
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light">
+
+
+  </nav>
+  <br>
+
+
+
+
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-lg-12 slider_img">
+      <div class="card" >
+        <br>
+        <br>
+        
+        <br>
+        <h3>NEXUX AQURIUM 6</h3>
+        <br>
+        <h2>More than just a<br> Aqurium house</h2>
+        <br>
+        <br>
+        <p>Lorem ipsum dolor sit amet cxcepturi deserunt harum voluptate reiciendis eius nesciunt luptate reiciendis eius nesciunt..</p>
+ 
+        <br>
+        <a href="">Get pro-level </a>
+       
+      
+      </h3>
+<br><br>
+     
+      
+      </img>
+      </div>
+
+      </div>
+    </div>
+
+    
+  </div>
+
+
+
+
+
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6 col-sm-5 col-md-5">
+        <div class="from-group">
+          <h3 class="txt" style="font-style:  bold;color: darkblue;">food delivery app</h3>
+          <div class="word "></div>
+
+        </div>
+        <br>
+
+
+        <div class="container-fluid">
+          <div class="row">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 one_card"data-aos="zoom-in-right">
+              <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae quibusdam corrupti
+                nesciunt, minus ipsa fugit voluptas, corporis laudantium aspernatur repellat nobis eaque. Perferendis
+                molestiae placeat, ducimus quo debitis ipsam facilis. Confused on which course to take? I have got you
+                covered. Browse courses and find out the best course for you. Its free! Code With Harry is my attempt to
+                teach basics and those coding techniques to people in short time which took me ages to learn.</p>
+
+
+            </div>
+          </div>
+        </div>
+        <div class="from-group" id="">
+
+          <a href="category.html" id="btn">order now</a>
+          <a href="" id="btn_two">Read Now</a>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  
+
+        <div class="card img_card">
+
+          <div class="video-container">
+            <video playsinline autoplay muted loop poster="https://images.unsplash.com/photo-1620222071550-a5c7f8b600ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyMDY4NDIyNA&ixlib=rb-1.2.1&q=80&w=400">
+
+              <source src="vedio/Pexels Videos 2561846.mp4" type="video/webm">
+            </video>
+          </div>
+
+        </div>
+
+
+
+
+
+
+      
+  <div class="container-fluid recent_upload">
+    <div class="row">
+      <div class="col-lg-6 clo-sm-4 clo-md-4">
+
+        <h2 data-aos="zoom-in-left">RECENT UPLOAD : </h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <div #swiperRef="" class="swiper_a " id="myswiper_two">
+    <div class="swiper-wrapper ">
+      
+      <div class="swiper-slide " id="slide_b"><a href=""><img src="images/arapaima" alt="">
+          <h3>arapaima</h3>
+          <p>The albacore is a very fast swimmer</p>
+        </a></div>
+      <div class="swiper-slide " id="slide_b"><a href="Alligator Gar.html"><img src="images/huy-phan-_LWxQJFgpyo-unsplash.jpg" alt="">
+          <h3>Alligator Gar</h3>
+          <p>deceription here </p>
+        </a></div>
+      <div class="swiper-slide " id="slide_b"><a href=""><img src="images/huy-phan-_LWxQJFgpyo-unsplash.jpg" alt="">
+          <h3>Alligator Gar</h3>
+          <p>deceription here </p>
+        </a></div>
+
+        <div class="swiper-slide " id="slide_b"><a href=""><img src="images/huy-phan-_LWxQJFgpyo-unsplash.jpg" alt="">
+          <h3>Alligator Gar</h3>
+          <p>deceription here </p>
+        </a></div>
+
+        <div class="swiper-slide " id="slide_b"><a href=""><img src="images/huy-phan-_LWxQJFgpyo-unsplash.jpg" alt="">
+          <h3>Alligator Gar</h3>
+          <p>deceription here </p>
+        </a></div>
+
+        <div class="swiper-slide " id="slide_b"><a href=""><img src="images/huy-phan-_LWxQJFgpyo-unsplash.jpg" alt="">
+          <h3>Alligator Gar</h3>
+          <p>deceription here </p>
+        </a></div>
+
+
+        <div class="swiper-slide " id="slide_b"><a href=""><img src="images/huy-phan-_LWxQJFgpyo-unsplash.jpg" alt="">
+          <h3>Alligator Gar</h3>
+          <p>deceription here </p>
+        </a></div>
+
+
+        <div class="swiper-slide " id="slide_b"><a href=""><img src="images/huy-phan-_LWxQJFgpyo-unsplash.jpg" alt="">
+          <h3>Alligator Gar</h3>
+          <p>deceription here </p>
+        </a></div>
+     
+    </div>
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <div class="container-fluid card twn_crd">
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 twn_crd_two">
+        <h2>29 Coolest Freshwater Aquarium Fish: For All Fish Keepers</h2>
+        <p style="color: rgb(93, 90, 90);"> Updated:March 7, 2022by Alison Page | CategoriesFreshwater Fish</p>
+
+        <div class="card line_crd">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 line">
+              <p>Tankarium is reader-supported. We may earn a small commission through products purchased using links on
+                this page.</p>
+
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <br> 
+
+ 
+
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <div class="col-lg-12 col-md-12 col-sm-8 icon_list">
+        <ul>
+          <li><a href="" class="a_icon_f"><i class="fab fa-facebook-f"></i>facebook</a></li>
+          <li><a href="" class="a_icon_t"><i class="fab fa-twitter"></i>twitter</a></li>
+          <li><a href="" class="a_icon_p">
+              <i class="fab fa-pinterest"></i>pinterest</a></li>
+          <li><a href="" class="" style="color: rgb(66, 64, 64);">6743<br>Shares</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="coninter-fluid card_long_main">
+    <div class="row ">
+      <div class="col-lg-8 col-md-8 card_long_size">
+        <div class="card card_long">
+          <br>
+
+          <h3 style="color: rgb(3, 3, 3);">Caring For A Freshwater Fish</h3>
+          <br>
+          <br>
+
+
+          <img src="images/maksym-sirman-MRpMpHFz6eQ-unsplash.jpg" class="img-fluid img" alt="">
+
+          <p class="p">Your freshwater aquarium is an enclosed ecosystem that needs careful maintenance to ensure that
+            the environment is healthy for the inhabitants. You can read an in-depth article at this link, which
+            explains how to care for a freshwater aquarium. In the meantime, here are a few basic pointers so that you
+            know what you’re taking on.</p>
+
+          <br>
+          <h3>The Nitrogen Cycle</h3>
+          <br>
+
+          <p class="p2">When you set up a new aquarium, it’s essential that you cycle the tank before you put fish in
+            it.</p>
+          <br>
+
+
+          <p class="p3">The biological part of the filter system contains certain species of beneficial bacteria that
+            process the harmful substances that are released during the decomposition of fish waste, uneaten food,
+            decaying plant matter, and general detritus. The Nitrogen Cycle, as it’s called, can take up to six weeks to
+            kick in properly, and is absolutely crucial for a safe, healthy tank.</p>
+          <br>
+          <p class="p4">You can read more about the Nitrogen Cycle in our detailed guide.</p>
+
+          <br>
+          <h3>Introducing New Fish To Your Aquarium</h3>
+          <br>
+          <p class="p5">Even though you’re super-excited about buying your new fish, don’t just tip them straight into
+            your tank!</p>
+          <br>
+          <h4>Quarantine</h4>
+          <img src="images/Depositphotos_142161480_l-2015.jpg" class="img-fluid img2" alt="">
+
+          <br>
+          <p class="p6">All livestock, plants, and decorations can carry diseases, parasites, and bacteria that you
+            absolutely don’t want in your display aquarium. For example, a few years back, I bought four beautiful dwarf
+            gouramis and put them into a quarantine tank. Thank goodness I did! Those fish came in water that carried a
+            whole bunch of snails that weren’t visible to the naked eye until they began to grow.</p>
+          <br>
+          <br>
+          <p class="p7">So, you should always put any new fish into a separate quarantine tank for at least two weeks
+            before adding them to your main tank. During that time, observe the fish for signs of ill health and treat
+            problems accordingly. When you’re happy that the fish are healthy, you can put them into your display tank.
+          </p>
+
+          <br>
+          <br>
+          <p class="p8">Plants and decorations should be rinsed in tank water containing antibacterial treatment to kill
+            off any nasties, and then added to your main aquarium.</p>
+          <h3>Acclimating New Fish</h3>
+          <br>
+          <p class="p9">All species of fish are sensitive to sudden temperature and environmental changes, and for that
+            reason, it’s essential that you acclimate your fish before putting them into your tank. Also, fish are
+            highly susceptible to stress.</p>
+          <br>
+          <a href="" style="margin-left:570px;">next page</a>
+
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid uplist">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card uplist_p ">
+          <h1>upcomming features</h1>
+
+          <br>
+          <ul class="list_catgry">
+            <li><a href="">seconde branch develop</a></li>
+            <li><a href="">Rent Aqurium</a></li>
+            <li><a href="">import fishes</a></li>
+            <li><a href="">job opportunities</a></li>
+          </ul>
+          <br>
+          <br>
+
+          <h1>Recent project</h1>
+          <br>
+          <ul class="list_catgry">
+            <li><a href="">Swiming pool </a></li>
+            <li><a href="">under Aquarium Restaurants</a></li>
+            <li><a href="">under Aquarium Rest Rooms</a></li>
+            <li><a href="">circkit playgroung</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid content" id="ct">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card content_list ">
+          <h1 class="ls">List of pages</h1>
+
+          <br>
+          <ol class="list_catgry">
+            <li><a href="">Home</a></li>
+            <br>
+            <li><a href="">Blogs</a></li>
+            <br>
+            <li><a href="">Addmission price</a></li>
+            <br>
+            <li><a href="">Adult shark dive</a></li>
+            <br>
+            <li><a href="">Alaska pollock shark</a></li>
+            <br>
+            <li><a href="">Albacore Tuna</a></li>
+            <br>
+            <li><a href="">Alligator Gar</a></li>
+            <br>
+            <li><a href="">Annual pass</a></li>
+            <br>
+            <li><a href="">Birthday parties</a></li>
+            <br>
+            <li><a href="">Conservation</a></li>
+            <br>
+
+            <li><a href="">Corporate</a></li>
+            <br>
+            <li><a href="">Feedback</a></li>
+            <br>
+            <li><a href="">login</a></li>
+            <br>
+            <li><a href="">sign up</a></li>
+            <br>
+            <li><a href="">Visitor</a></li>
+            <br>
+            <li><a href="">School & Group</a></li>
+            <br>
+            <li><a href="">Discovery</a></li>
+            <br>
+            <li><a href="">School & Experiences</a></li>
+            <br>
+
+
+
+          </ol>
+
+          <h4>shorts add</h4>
+          <div class="card">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure saepe minus magnam facere assumenda
+              suscipit obcaecati nihil quam odio reprehenderit accusamus veniam, ut aut similique cupiditate quidem
+              sunt, ipsam maiores?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nesciunt blanditiis saepe eum fuga
+              atque aut laudantium natus. Laboriosam aliquid tenetur consequuntur mollitia numquam maxime sint molestiae
+              cumque maiores incidunt?</p>
+
+
+
+          </div>
+          <br>
+
+          <div class="card add_crd_two">
+
+            <a href=""><img src="https://www.blueplanetaquarium.com/wp-content/uploads/2020/10/DSC_9908-768x512.jpg"
+                alt="Close up of visitors phone taking picture of Chiclids" class="cover">
+              <h4>Whats on</h4></img>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+
+  <div class="container-fluid bannertwo">
+    <div class="row">
+      <div class="col-lg-12 "id="bannertwo">
+      <div class="card" id="twolist">
+        <img src="images/card_img_one.jpg" data-aos="zoom-in" alt=""  class="img-fluid">
+      <h3 data-aos="zoom-in">Our oceans face challenges every day. Together, we can save them for generations to come.
+      </h3>
+<br><br>
+        <a href="" class="btn btn-dark" data-aos="zoom-in">find out more</a>
+      
+      </img>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Slideshow container -->
+<div class="slideshow-container" data-aos="fade-right"
+data-aos-offset="300"
+data-aos-easing="ease-in-sine">>
+
+  <!-- Full-width slides/quotes -->
+  <div class="mySlides">
+     
+    <q>I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
+    <p class="author">- John Keats</p>
+  </div>
+
+  <div class="mySlides">
+    <q>I love you the more in that I believe you had liked me for my own sak e and for nothing else Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus assumenda velit placeat pariatur? Nobis provident, quisquam sapiente sequi cum nemo voluptates! Praesentium, iusto ipsum voluptates adipisci ab quo quidem veniam.</q>
+    <p class="author">- Ernest Hemingway</p>
+  </div>
+
+  <div class="mySlides">
+    <q style="font-weight:bold;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque ullam porro, eius eaque suscipit ab omnis dicta magni dolore voluptate corrupti, ut ex sint ad nobis! Error debitis accusamus officia?</q>
+    <p class="author">- Thomas A. Edison</p>
+  </div>
+
+  
+
+  <!-- Next/prev buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- Dots/bullets/indicators -->
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+<script>var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }</script>
+
+  
+
+
+</div>
+
+
+
+
+
+  
+
+
+
+
+          
+
+    
+
+
+    <div class="card mb-3" style="max-width: 540px;">
+
+
+    </div>
+  </div>
+
+  <body>
+    <div class="header">
+      <h1>Reliable, efficient delivery</h1>
+      <h1>Powered by Technology</h1>
+  
+      <p>Our Artificial Intelligence powered tools use millions of project data points
+        to ensure that your project is successful</p>
+    </div>
+    <div class="row1-container">
+      <div class="box box-down cyan">
+        <h2>Supervisor</h2>
+        <p>Monitors activity to identify project roadblocks</p>
+        <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="">
+      </div>
+  
+      <div class="box red">
+        <h2>Team Builder</h2>
+        <p>Scans our talent network to create the optimal team for your project</p>
+        <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="">
+      </div>
+  
+      <div class="box box-down blue">
+        <h2>Calculator</h2>
+        <p>Uses data from past projects to provide better delivery estimates</p>
+        <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="">
+      </div>
+    </div>
+
+    <br>
+
+   
+
+    <br>
+    <br>
+
+
+
+
+    <div class="container threeimg_list">
+
+      <!-- Card deck -->
+      <div class="card-deck row">
+      
+       
+      
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-8">
+        <!-- Card -->
+        <div class=" mb-4">
+      
+          <!--Card image-->
+          <div class="view overlay">
+           
+            <img class="card-img-top yy" src="images/Exibitsbannerthone.webp" alt="Card image cap">
+          <h2 class="yy_two">
+            our Exibits
+          </h2></img>
+            <a href="#!">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+      
+          <!--Card content-->
+          
+      
+        </div>
+        <!-- Card -->
+      </div>
+      
+      <div class="col-xs-12 col-sm-6 col-md-4 ">
+        <!-- Card -->
+        <div class="mb-4">
+      
+          <!--Card image-->
+          <div class="view overlay">
+            <img class="card-img-top yy" src="images/convervationimgtwo.jpg" alt="Card image cap">
+            <a href="#!">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+      
+          <!--Card content-->
+          
+        </div>
+        <!-- Card -->
+      </div>
+
+
+      <div class="col-xs-12 col-sm-6 col-md-4 ">
+          <!-- Card -->
+          <div class=" mb-4">
+        
+            <!--Card image-->
+            <div class="view overlay">
+              <img class="card-img-top yy" src="images/convervationimgthree.jpg" alt="Card image cap">
+              <a href="#!">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+        
+            <!--Card content-->
+            
+          </div>
+          <!-- Card -->
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-8">
+          <!-- Card -->
+          <div class=" mb-4">
+        
+            <!--Card image-->
+            <div class="view overlay">
+             
+              <img class="card-img-top yy" src="images/nathan-dumlao-As8zq82LBpw-unsplash (1).jpg" alt="Card image cap">
+            <h2 class="yy_two">
+              Birthday party
+            </h2></img>
+              <a href="#!">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+        
+            <!--Card content-->
+            
+        
+          </div>
+          <!-- Card -->
+        </div>
+
+        <br>
+        <div class="container-fluid  oneimg_list">
+          <div class="row">
+      
+            <img src="images/banner_home.webp" class="img-fluid " alt="">
+        
+        
+        
+        
+        </img>
+      
+          </div>
+        </div>
+
+        <br>
+        <br>
+
+        <br>
+        <br>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="container fourimg_list">
+
+          <!-- Card deck -->
+          <div class="card-deck row">
+          
+           
+          
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-8">
+            <!-- Card -->
+            <div class=" mb-4">
+          
+              <!--Card image-->
+              <div class="view overlay">
+               
+                <img class="card-img-top yy" src="images/Exibitsbannerthone.webp" alt="Card image cap">
+              <h2 class="yy_two">
+                our Exibits
+              </h2></img>
+                <a href="#!">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+          
+              <!--Card content-->
+              
+          
+            </div>
+            <!-- Card -->
+          </div>
+          
+          <div class="col-xs-12 col-sm-6 col-md-4 ">
+            <!-- Card -->
+            <div class="mb-4">
+          
+              <!--Card image-->
+              <div class="view overlay">
+                <img class="card-img-top yy" src="images/convervationimgtwo.jpg" alt="Card image cap">
+                <a href="#!">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+          
+              <!--Card content-->
+              
+            </div>
+            <!-- Card -->
+          </div>
+    
+    
+          <div class="col-xs-12 col-sm-6 col-md-4 ">
+              <!-- Card -->
+              <div class=" mb-4">
+            
+                <!--Card image-->
+                <div class="view overlay">
+                  <img class="card-img-top yy" src="images/convervationimgthree.jpg" alt="Card image cap">
+                  <a href="#!">
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+            
+                <!--Card content-->
+                
+              </div>
+              <!-- Card -->
+            </div>
+    
+    
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-8">
+              <!-- Card -->
+              <div class=" mb-4">
+            
+                <!--Card image-->
+                <div class="view overlay">
+                 
+                  <img class="card-img-top yy" src="images/nathan-dumlao-As8zq82LBpw-unsplash (1).jpg" alt="Card image cap">
+                <h2 class="yy_two">
+                  Birthday party
+                </h2></img>
+                  <a href="#!">
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+            
+                <!--Card content-->
+                
+            
+              </div>
+              <!-- Card -->
+            </div>
+
+
+
+            <div class="container fourimg_list">
+
+              <!-- Card deck -->
+              <div class="card-deck row">
+              
+               
+              
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-8">
+                <!-- Card -->
+                <div class=" mb-4">
+              
+                  <!--Card image-->
+                  <div class="view overlay">
+                   
+                    <img class="card-img-top yy" src="images/Exibitsbannerthone.webp" alt="Card image cap">
+                  <h2 class="yy_two">
+                    our Exibits
+                  </h2></img>
+                    <a href="#!">
+                      <div class="mask rgba-white-slight"></div>
+                    </a>
+                  </div>
+              
+                  <!--Card content-->
+                  
+              
+                </div>
+                <!-- Card -->
+              </div>
+              
+              <div class="col-xs-12 col-sm-6 col-md-4 ">
+                <!-- Card -->
+                <div class="mb-4">
+              
+                  <!--Card image-->
+                  <div class="view overlay">
+                    <img class="card-img-top yy" src="images/convervationimgtwo.jpg" alt="Card image cap">
+                    <a href="#!">
+                      <div class="mask rgba-white-slight"></div>
+                    </a>
+                  </div>
+              
+                  <!--Card content-->
+                  
+                </div>
+                <!-- Card -->
+              </div>
+        
+        
+              <div class="col-xs-12 col-sm-6 col-md-4 ">
+                  <!-- Card -->
+                  <div class=" mb-4">
+                
+                    <!--Card image-->
+                    <div class="view overlay">
+                      <img class="card-img-top yy" src="images/convervationimgthree.jpg" alt="Card image cap">
+                      <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+                
+                    <!--Card content-->
+                    
+                  </div>
+                  <!-- Card -->
+                </div>
+        
+        
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-8">
+                  <!-- Card -->
+                  <div class=" mb-4">
+                
+                    <!--Card image-->
+                    <div class="view overlay">
+                     
+                      <img class="card-img-top yy" src="images/nathan-dumlao-As8zq82LBpw-unsplash (1).jpg" alt="Card image cap">
+                    <h2 class="yy_two">
+                      Birthday party
+                    </h2></img>
+                      <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+                
+                    <!--Card content-->
+                    
+                
+                  </div>
+                  <!-- Card -->
+                </div>
+               
+                
+
+        
+
+        
+
+  
+
+
+
+
+
+<div class="container-fluid col-lg-12 col-sm-5 aa">
+  <div class="row">
+    <div class="col-lg-12 col-md-7 col-sm-8">
+      <form action=""  class="a">
+
+
+        <div class="form-group col-lg-12 col-sm-12 col-md-10">
+          <label class="label l" for="inputEmail4" >Name</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+        </div>
+        <br>
+
+        <div class="form-group col-lg-12 col-sm-12 col-md-10">
+          <label class="label l"  for="inputAddress2">Address 2</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div>
+        <br>
+
+        <div class="form-row">
+          <div class="form-group  col-lg-12 col-sm-12 col-md-10">
+            <label class="label l"  for="inputCity">City</label>
+            <input   type="text" class="form-control" id="inputCity">
+          </div>
+          <br>
+          
+          
+        </div>
+
+        <div class="form-group col-lg-12 col-sm-5 col-md-7">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label l" for="gridCheck">
+              Check me out
+            </label>
+          </div>
+        </div>
+
+        <br>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="container-fluid feedbackhere">
+  <div class="row">
+    <div class="col-lg-12 col-sm-6 col-md-6">
+      <h3>Feedback here</h3>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+   
+ 
+
+
+<footer class="footer-distributed">
+
+ 
+</footer>
+
+
+
+
+
+
+
+  <script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+  
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+  
+    // Get today's date and time
+    var now = new Date().getTime();
+  
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+  
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+    // Display the result in the element with id="demo"
+    document.getElementById("demo").innerHTML = "free tickit :" + hours + "h "
+    + minutes + "m " + seconds + "s ";
+  
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- slider two code -->
+
+  <script>
+    var swiper = new Swiper("#myswiper_two", {
+      slidesPerView: 3,
+      centeredSlides: true,
+      spaceBetween: 30,
+      pagination: {
+        el: "#swiper-pagination",
+        type: "fraction",
+      },
+
+    });
+
+    var appendNumber = 4;
+    var prependNumber = 1;
+
+
+  </script>
+
+  <!-- slider two code -->
+
+
+
+
+
+
+
+
+
+  <script src="jquery-3.6.0.min.js"></script>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+  <script>
+    var words = ['Hi welcome to my website...!',],
+      part,
+      i = 0,
+      offset = 0,
+      len = words.length,
+      forwards = true,
+      skip_count = 0,
+      skip_delay = 15,
+      speed = 70;
+    var wordflick = function () {
+      setInterval(function () {
+        if (forwards) {
+          if (offset >= words[i].length) {
+            ++skip_count;
+            if (skip_count == skip_delay) {
+              forwards = false;
+              skip_count = 0;
+            }
+          }
+        }
+        else {
+          if (offset == 0) {
+            forwards = true;
+            i++;
+            offset = 0;
+            if (i >= len) {
+              i = 0;
+            }
+          }
+        }
+        part = words[i].substr(0, offset);
+        if (skip_count == 0) {
+          if (forwards) {
+            offset++;
+          }
+          else {
+            offset--;
+          }
+        }
+        $('.word').text(part);
+      }, speed);
+    };
+
+    $(document).ready(function () {
+      wordflick();
+    });
+  </script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+  <script src="script.js/header.js"></script>
+  <script src="script.js/footer.js"></script>
+  <script src="script.js/top_balck_lind.js"></script>
+
+</body>
+
+</html>
